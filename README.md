@@ -13,6 +13,9 @@ A lightweight and efficient PyTorch framework for **Flow-Matching**, a modern ap
   <img src="visuals_celebahq/myplot9.png" width="200"/> 
 </p>
 
+Evaluate our model:
+[DOWNLOWD the trained model](https://drive.google.com/file/d/1d9ulaepOYhsWFEmpe0XaqxsvXjUa9pRf/view?usp=sharing)
+
 ## 📁 Project Structure
 
 ```
