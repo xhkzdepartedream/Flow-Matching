@@ -13,6 +13,9 @@
   <img src="visuals_celebahq/myplot9.png" width="200"/> 
 </p>
 
+评估模型:
+[DOWNLOWD the trained model](https://drive.google.com/file/d/1t1nzhLOH2shbek0rqUF-uw8sQoz_M5BJ/view?usp=sharing)
+
 ## 📁 项目结构
 
 ```
@@ -67,6 +70,7 @@ Flow-Matching/
 git clone https://github.com/your-username/Flow-Matching.git
 cd Flow-Matching
 ```
+并从以上链接下载训练完毕的模型。
 
 2.  **安装依赖**
 ```bash
