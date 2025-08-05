@@ -14,7 +14,7 @@ A lightweight and efficient PyTorch framework for **Flow-Matching**, a modern ap
 </p>
 
 Evaluate our model:
-[DOWNLOWD the trained model](https://drive.google.com/file/d/1d9ulaepOYhsWFEmpe0XaqxsvXjUa9pRf/view?usp=sharing)
+[DOWNLOWD the trained model](https://drive.google.com/file/d/1t1nzhLOH2shbek0rqUF-uw8sQoz_M5BJ/view?usp=sharing)
 
 ## 📁 Project Structure
 
@@ -70,6 +70,7 @@ This setup allows us to achieve high-quality image generation while minimizing c
 git clone https://github.com/your-username/Flow-Matching.git
 cd Flow-Matching
 ```
+And download the trained model from the link above.
 
 2.  **Install dependencies**
 ```bash
