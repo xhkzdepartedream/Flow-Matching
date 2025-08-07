@@ -14,7 +14,7 @@
 </p>
 
 下载我们训练好的模型：
-[点击下载模型权重](https://drive.google.com/file/d/1t1nzhLOH2shbek0rqUF-uw8sQoz_M5BJ/view?usp=sharing)
+[点击下载模型权重](https://drive.google.com/file/d/1jzkRGL_ZqgXaFskdXpLxoU__KSgnMz4X/view?usp=drive_link)
 
 ## 🏆 性能亮点
 
