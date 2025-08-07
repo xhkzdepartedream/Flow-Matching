@@ -332,7 +332,7 @@ def load_model_from_checkpoint(checkpoint_path, model_type: str, device, model_i
             else:
                 print("[INFO] No 'config' or 'model_instance' found. Creating a default AutoencoderKL.")
                 # 使用 "stabilityai/sd-vae-ft-mse" 作为基础模型
-                model = AutoencoderKL.from_pretrained("/data1/yangyanliang/checkpoints/autoencoderkl/")
+                model = AutoencoderKL.from_pretrained("checkpoints/autoencoderkl/")
                 # 尝试从 checkpoint 中获取 state_dict
                 if isinstance(checkpoint, dict):
                     loaded_state_dict = checkpoint.get('vae_state_dict', checkpoint.get('state_dict', checkpoint))

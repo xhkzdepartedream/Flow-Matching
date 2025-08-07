@@ -6,7 +6,7 @@ from utils import show_reconstructions, load_model_from_checkpoint
 
 # --- 全局配置 ---
 # 根据您的环境修改这些默认路径
-DEFAULT_IMAGE_DIR = "/data1/yangyanliang/.cache/kagglehub/datasets/chelove4draste/ffhq-256x256/versions/1/ffhq256/"
+DEFAULT_IMAGE_DIR = "data/ffhq256/"
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
@@ -20,7 +20,7 @@ def load_model(model_type, checkpoint_path):
 
     if model_type == 'autoencoderkl':
         # --- 加载预训练的AutoencoderKL ---
-        model = AutoencoderKL.from_pretrained("/data1/yangyanliang/checkpoints/autoencoderkl/")
+        model = AutoencoderKL.from_pretrained("checkpoints/autoencoderkl/")
         model = load_model_from_checkpoint(checkpoint_path, 'autoencoderkl', DEVICE, model)
 
 
@@ -39,7 +39,7 @@ def main(model_type,checkpoint_path):
     # 1. 选择模型类型: 'vae', 'autoencoderkl', 或 'vqgan'
     # 2. 设置模型权重的路径
     # checkpoint_path = "/path/to/your/autoencoderkl_directory/"  # for autoencoderkl
-    # checkpoint_path = "/data1/yangyanliang/Diffusion-Model/vavae16c32d_test3_20.pth" # for vae or vqgan
+    # checkpoint_path = "checkpoints/vavae16c32d_test3_20.pth" # for vae or vqgan
     # --------------------------------- #
 
     # 其他配置
@@ -64,4 +64,4 @@ def main(model_type,checkpoint_path):
 
 
 if __name__ == '__main__':
-    main(model_type = 'autoencoderkl',checkpoint_path = "/data1/yangyanliang/autoencoderkl_finetuned_celeba_hq2/")
+    main(model_type = 'autoencoderkl',checkpoint_path = "checkpoints/autoencoderkl_finetuned_celeba_hq2/")

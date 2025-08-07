@@ -22,7 +22,7 @@ class AutoencoderKL_trainer:
         if pretrained_model_name_or_path:
             self.vae = load_model_from_checkpoint(pretrained_model_name_or_path, "autoencoderkl", device)
         else:
-            self.vae = AutoencoderKL.from_pretrained("/data1/yangyanliang/checkpoints/autoencoderkl/")
+            self.vae = AutoencoderKL.from_pretrained("checkpoints/autoencoderkl/")
 
         self.vae = self.vae.to(device)
         self.title = title

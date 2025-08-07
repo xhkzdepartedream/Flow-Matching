@@ -95,9 +95,9 @@ def batch_sample_simple_distributed(config_path: str, total_samples: int, save_p
 
 
 if __name__ == "__main__":
-    CONFIG_PATH = "/data1/yangyanliang/Flow-Matching/configs/celebahq_dit.yaml"
+    CONFIG_PATH = "configs/celebahq_dit.yaml"
     TOTAL_SAMPLES = 30000
-    SAVE_PATH = "/data1/yangyanliang/Flow-Matching/celeba_samples"
+    SAVE_PATH = "celeba_samples"
 
     if "LOCAL_RANK" not in os.environ:
         print("错误：此脚本需要通过 torch.distributed.launch 或 torchrun 启动以进行并行采样。")

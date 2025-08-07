@@ -78,9 +78,9 @@ def batch_sample(config_path: str, total_samples: int, save_path: str):
 
 if __name__ == "__main__":
     # --- 在此直接设置参数 ---
-    CONFIG_PATH = "/data1/yangyanliang/Flow-Matching/configs/celebahq_dit.yaml"
+    CONFIG_PATH = "configs/celebahq_dit.yaml"
     TOTAL_SAMPLES = 30000
-    SAVE_PATH = "/data1/yangyanliang/Flow-Matching/celeba_samples"
+    SAVE_PATH = "celeba_samples"
     # -------------------------
 
     print("--- 开始批量采样任务 ---")

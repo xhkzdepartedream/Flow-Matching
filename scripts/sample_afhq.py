@@ -20,7 +20,7 @@ def main():
         model_type = 'dit',
         device = device
     )
-    vae = AutoencoderKL.from_pretrained("/data1/yangyanliang/checkpoints/autoencoderkl/")
+    vae = AutoencoderKL.from_pretrained("checkpoints/autoencoderkl/")
     vae = vae.to(device)
 
     model.eval()

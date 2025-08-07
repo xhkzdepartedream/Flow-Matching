@@ -25,11 +25,11 @@ trainer:
     dataset:
       target: data_processing.init_dataset.LatentDataset
       params:
-        lmdb_path: "/data1/yangyanliang/data/celebahq_latents.lmdb"
+        lmdb_path: "data/celebahq_latents.lmdb"
 
 checkpoint:
   load: true
-  path: "/data1/yangyanliang/Flow-Matching/celebahq_dit_1300.pth"
+  path: "celebahq_dit_1300.pth"
   save_every: 100
 
 
@@ -39,7 +39,7 @@ sampling:
   n_steps: 200
   sampler_type: 'midpoint'
   output_dir: "./samples_cifar10"
-  model_path: "/data1/yangyanliang/Flow-Matching/celebahq_dit_1500.pth"
-  vae_path: "/data1/yangyanliang/autoencoderkl_finetuned_celeba_hq2/"
+  model_path: "celebahq_dit_1500.pth"
+  vae_path: "checkpoints/autoencoderkl_finetuned_celeba_hq2/"
 
 

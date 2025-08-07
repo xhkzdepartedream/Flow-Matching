@@ -13,11 +13,11 @@ device, local_rank = init_distributed()
 
 def main():
 
-    dir = "/data1/yangyanliang/.cache/kagglehub/datasets/chelove4draste/ffhq-256x256/versions/1/ffhq256/"
+    dir = "data/ffhq256/"
 
     train_dataset = CelebaHQDataset(dir, transform = transform)
 
-    pretrained_model_name_or_path = "/data1/yangyanliang/autoencoderkl_finetuned_celeba_hq2/"
+    pretrained_model_name_or_path = "checkpoints/autoencoderkl_finetuned_celeba_hq2/"
 
     # Initialize the trainer
     autoencoderkl_launcher = AutoencoderKL_trainer(

@@ -24,7 +24,7 @@ trainer:
     dataset:
       target: data_processing.init_dataset.LatentDataset
       params:
-        lmdb_path: "/data1/yangyanliang/data/afhq_latents.lmdb/"
+        lmdb_path: "data/afhq_latents.lmdb/"
 
 checkpoint:
   load: false
@@ -37,5 +37,5 @@ sampling:
   n_steps: 200
   sampler_type: 'midpoint'
   output_dir: "./samples_fm"
-  model_path: "/data1/yangyanliang/Flow-Matching/afhq_500.pth"
+  model_path: "afhq_500.pth"
 

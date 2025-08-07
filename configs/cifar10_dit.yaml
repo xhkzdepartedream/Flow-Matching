@@ -24,12 +24,12 @@ trainer:
     dataset:
       target: data_processing.init_dataset.
       params:
-        root: '/data1/yangyanliang/data/'
+        root: 'data/'
         download: false
 
 checkpoint:
   load: true
-  path: "/data1/yangyanliang/Flow-Matching/cifar10_uncond_700.pth"
+  path: "cifar10_uncond_700.pth"
   save_every: 100
   ignore_labels: true
 
@@ -40,6 +40,6 @@ sampling:
 
   sampler_type: 'midpoint'
   output_dir: "./samples_cifar10"
-  model_path: "/data1/yangyanliang/Flow-Matching/cifar10_uncond_700.pth"
+  model_path: "cifar10_uncond_700.pth"
 
 

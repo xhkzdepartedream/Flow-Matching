@@ -22,7 +22,7 @@ trainer:
     dataset:
       target: data_processing.init_dataset.get_cifar10_dataset
       params:
-        root: '/data1/yangyanliang/data/'
+        root: 'data/'
         download: false
 
 checkpoint:
@@ -37,4 +37,4 @@ sampling:
   n_steps: 200
   sampler_type: 'midpoint'
   output_dir: "./samples_cifar10_unet"
-  model_path: "/data1/yangyanliang/Flow-Matching/cifar10_unet_500.pth"
+  model_path: "cifar10_unet_500.pth"

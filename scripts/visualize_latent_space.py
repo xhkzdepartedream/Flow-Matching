@@ -65,7 +65,7 @@ if __name__ == '__main__':
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     
     # 从 LMDB 加载 latent
-    lmdb_path = '/data1/yangyanliang/data_processing/latents.lmdb/'  # 使用配置文件中的路径
+    lmdb_path = 'data/latents.lmdb/'  # 使用配置文件中的路径
     dataset = LatentDataset(lmdb_path)
     dataloader = DataLoader(dataset, batch_size=64, shuffle=False)
 

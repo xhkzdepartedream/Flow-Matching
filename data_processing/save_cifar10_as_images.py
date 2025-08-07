@@ -66,7 +66,7 @@ def save_cifar10_images(output_dir, num_images = None):
 
     # 加载CIFAR-10数据集
     dataset = torchvision.datasets.CIFAR10(
-        root = "/data1/yangyanliang/data/",
+        root = "data/",
         train = True,
         download = False,
         transform = transform
@@ -92,7 +92,7 @@ def save_cifar10_images(output_dir, num_images = None):
 
 
 def main():
-    save_cifar10_images(output_dir = "/data1/yangyanliang/Flow-Matching/images_cifar10/", num_images = 30000)
+    save_cifar10_images(output_dir = "images_cifar10/", num_images = 30000)
 
 
 if __name__ == "__main__":

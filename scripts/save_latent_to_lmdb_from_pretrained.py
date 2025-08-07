@@ -221,14 +221,13 @@ if __name__ == '__main__':
     device, local_rank = init_distributed()
     print(f"[Rank {local_rank}] Starting latent saving process...")
 
-    loaded_model = load_model_from_checkpoint("/data1/yangyanliang/autoencoderkl_finetuned_celeba_hq2/",
-                                              'autoencoderkl', device)
+    loaded_model = load_model_from_checkpoint("checkpoints/autoencoderkl_finetuned_celeba_hq2/",
     # 修改为支持多个图像目录
     src_dicts = [
-        "/data1/yangyanliang/.cache/kagglehub/datasets/chelove4draste/ffhq-256x256/versions/1/ffhq256/",
-        "/data1/yangyanliang/.cache/kagglehub/datasets/badasstechie/celebahq-resized-256x256/versions/1/celeba_hq_256/"
+        "data/ffhq256/",
+        "data/celeba_hq_256/"
     ]
-    dst_dict = '/data1/yangyanliang/data/'
+    dst_dict = 'data/'
     save_latents_to_lmdb(
         model = loaded_model,
         image_dirs = src_dicts,
