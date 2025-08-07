@@ -1,0 +1,14 @@
+/data1/yangyanliang/conda/condabin/conda run -n py312 --no-capture-output python /data1/yangyanliang/Flow-Matching/scripts/compute_fid.py
+Creating feature extractor "inception-v3-compat" with features ['2048']
+Extracting statistics from input 1
+Looking for samples non-recursivelty in "/data1/yangyanliang/.cache/kagglehub/datasets/badasstechie/celebahq-resized-256x256/versions/1/celeba_hq_256/" with extensions png,jpg,jpeg
+Found 30000 samples, some are lossy-compressed - this may affect metrics
+/data1/yangyanliang/conda/envs/py312/lib/python3.12/site-packages/torch_fidelity/datasets.py:16: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(img.tobytes())).view(height, width, 3)
+Processing samples
+Extracting statistics from input 2
+Looking for samples non-recursivelty in "/data1/yangyanliang/Flow-Matching/celeba_samples/" with extensions png,jpg,jpeg
+Found 30000 samples
+Processing samples
+Frechet Inception Distance: 47.39580135623396
+FID: 47.39580135623396

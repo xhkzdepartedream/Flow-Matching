@@ -1,0 +1,40 @@
+trainer:
+  target: trainer.Trainer.Trainer
+  params:
+    title: "cifar10_unet"
+    n_epoch: 500
+    batch_size: 128
+    lr: 5.0e-4
+    model:
+      target: models.Unet.Unet
+      params:
+        input_ch: 3
+        n_ch: 128
+        ch_mults: [1, 2, 2, 2]
+        is_attn: [false, true, false, false]
+        n_blocks: 2
+        attn_heads: 4
+        attn_d_k: 64
+        n_groups: 16
+    scheduler:
+      target: fm_scheduler.OTScheduler.OTScheduler
+      params: {}
+    dataset:
+      target: data_processing.init_dataset.get_cifar10_dataset
+      params:
+        root: '/data1/yangyanliang/data/'
+        download: false
+
+checkpoint:
+  load: false
+  path: ""
+  save_every: 100
+  ignore_labels: true
+
+# --- Sampling Arguments ---
+sampling:
+  shape: [512, 3, 32, 32]
+  n_steps: 200
+  sampler_type: 'midpoint'
+  output_dir: "./samples_cifar10_unet"
+  model_path: "/data1/yangyanliang/Flow-Matching/cifar10_unet_500.pth"

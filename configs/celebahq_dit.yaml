@@ -1,0 +1,45 @@
+trainer:
+  target: trainer.Trainer.Trainer
+  params:
+    title: "celebahq_dit"
+    n_epoch: 1500
+    batch_size: 128
+    lr: 5.0e-5
+    gradient_accumulation_steps: 4
+    warmup_steps: 500
+    ignore_labels: false
+    model:
+      target: models.DiT.DiT
+      params:
+        input_size: 32
+        input_ch: 4
+        patch_size: 2
+        n_ch: 512
+        n_blocks: 8
+        num_heads: 16
+        pe: "rope"
+        has_cond: false
+    scheduler:
+      target: fm_scheduler.OTScheduler.OTScheduler
+      params: {}
+    dataset:
+      target: data_processing.init_dataset.LatentDataset
+      params:
+        lmdb_path: "/data1/yangyanliang/data/celebahq_latents.lmdb"
+
+checkpoint:
+  load: true
+  path: "/data1/yangyanliang/Flow-Matching/celebahq_dit_1300.pth"
+  save_every: 100
+
+
+# --- Sampling Arguments ---
+sampling:
+  shape: [8, 4, 32, 32]
+  n_steps: 200
+  sampler_type: 'midpoint'
+  output_dir: "./samples_cifar10"
+  model_path: "/data1/yangyanliang/Flow-Matching/celebahq_dit_1500.pth"
+  vae_path: "/data1/yangyanliang/autoencoderkl_finetuned_celeba_hq2/"
+
+

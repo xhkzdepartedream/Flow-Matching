@@ -1,0 +1,45 @@
+trainer:
+  target: trainer.Trainer.Trainer
+  params:
+    title: "cifar10_uncond"
+    n_epoch: 1000
+    batch_size: 160
+    lr: 4.0e-4
+    model:
+      target: models.DiT.DiT
+      params:
+        input_size: 32
+        input_ch: 3
+        patch_size: 2
+        n_ch: 512
+        n_blocks: 8
+        num_heads: 8
+        pe: "rope"
+        has_cond: false
+        cls_num: 10
+        drop_lab: 0.2
+    scheduler:
+      target: fm_scheduler.OTScheduler.OTScheduler
+      params: {}
+    dataset:
+      target: data_processing.init_dataset.
+      params:
+        root: '/data1/yangyanliang/data/'
+        download: false
+
+checkpoint:
+  load: true
+  path: "/data1/yangyanliang/Flow-Matching/cifar10_uncond_700.pth"
+  save_every: 100
+  ignore_labels: true
+
+# --- Sampling Arguments ---
+sampling:
+  shape: [10, 3, 32, 32]
+  n_steps: 200
+
+  sampler_type: 'midpoint'
+  output_dir: "./samples_cifar10"
+  model_path: "/data1/yangyanliang/Flow-Matching/cifar10_uncond_700.pth"
+
+

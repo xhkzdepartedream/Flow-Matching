@@ -1,0 +1,41 @@
+trainer:
+  target: trainer.Trainer.Trainer
+  params:
+    title: "afhq"
+    n_epoch: 500
+    batch_size: 128
+    lr: 1.0e-4
+    model:
+      target: models.DiT.DiT
+      params:
+        input_size: 64
+        input_ch: 4
+        patch_size: 4
+        n_ch: 512
+        n_blocks: 8
+        num_heads: 8
+        pe: "rope"
+        has_cond: false
+        cls_num: 3
+        drop_lab: 0.2
+    scheduler:
+      target: fm_scheduler.OTScheduler.OTScheduler
+      params: {}
+    dataset:
+      target: data_processing.init_dataset.LatentDataset
+      params:
+        lmdb_path: "/data1/yangyanliang/data/afhq_latents.lmdb/"
+
+checkpoint:
+  load: false
+  path: ""
+  save_every: 100
+
+# --- Sampling Arguments ---
+sampling:
+  shape: [2, 4, 64, 64]
+  n_steps: 200
+  sampler_type: 'midpoint'
+  output_dir: "./samples_fm"
+  model_path: "/data1/yangyanliang/Flow-Matching/afhq_500.pth"
+
