@@ -14,7 +14,7 @@ A lightweight and efficient PyTorch framework for **Flow-Matching**, a modern ap
 </p>
 
 Download our trained model:
-[Click to Download Model Weights](https://drive.google.com/file/d/1t1nzhLOH2shbek0rqUF-uw8sQoz_M5BJ/view?usp=sharing)
+[Click to Download Model Weights](https://drive.google.com/file/d/1jzkRGL_ZqgXaFskdXpLxoU__KSgnMz4X/view?usp=drive_link)
 
 ## 🏆 Performance Highlights
 
