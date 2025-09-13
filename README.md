@@ -2,6 +2,7 @@
 
 [English](README.md) | [中文](README_zh.md)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17110046.svg)](https://doi.org/10.5281/zenodo.17110046)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
