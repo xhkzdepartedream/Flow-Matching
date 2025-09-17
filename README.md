@@ -55,18 +55,40 @@ This setup allows us to achieve high-quality image generation while minimizing c
 
 ## 📁 Project Structure
 
+This project adopts a highly modular architecture to ensure a clear separation of concerns, enhancing scalability and maintainability. This design makes it easy to experiment with new models, data, or training procedures.
+
 ```
 Flow-Matching/
-├── configs/                  # YAML configuration files
-├── data_processing/          # Data loading and preprocessing scripts
-├── fm_scheduler/             # Flow-Matching schedulers and samplers
-├── models/                   # Neural network architectures (DiT, U-Net)
-├── modules/                  # Reusable neural network components
-├── scripts/                  # Execution scripts (training, sampling)
-├── trainer/                  # Training orchestration classes
-├── utils.py                  # Utility functions
-├── requirements.txt
-└── README.md
+├── configs/              # Experiment configurations (YAML files)
+│   └── celebahq_dit.yaml
+|
+├── data_processing/      # Scripts for data downloading and preprocessing
+│   ├── download_celeba_hq.py
+│   └── init_dataset.py
+|
+├── fm_scheduler/         # Core Flow Matching logic
+│   ├── FlowsBase.py      # Base classes for flow definitions
+│   ├── OTScheduler.py    # Optimal Transport schedulers
+│   └── Sampler.py        # ODE/SDE samplers
+|
+├── models/               # Core neural network architectures
+│   ├── DiT.py            # Diffusion Transformer (DiT) model
+│   └── Unet.py           # UNet model
+|
+├── modules/              # Reusable components and sub-modules
+│   ├── autoencoderkl.py  # VAE model for latent space encoding/decoding
+│   ├── embedders.py      # Text and class embedders
+│   └── perceptual_module.py # Perceptual loss modules (e.g., VGG)
+|
+├── scripts/              # Executable scripts for various tasks
+│   ├── train/            # Training scripts
+│   │   └── train.py
+│   ├── compute_fid.py    # FID score computation
+│   └── sample_celebahq.py # Image generation scripts
+|
+└── trainer/              # High-level training orchestration
+    ├── Trainer.py        # Main trainer class for the generative model
+    └── AutoencoderKL_trainer.py # Trainer for the VAE
 ```
 
 ## 🛠️ Installation
